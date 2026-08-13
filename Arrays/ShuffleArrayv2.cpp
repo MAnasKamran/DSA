@@ -1,4 +1,3 @@
-//faster with lesser runtime
 #include <iostream>
 #include <vector>
 
