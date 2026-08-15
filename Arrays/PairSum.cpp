@@ -31,8 +31,6 @@ int main(){
     vector<int> result;
 
     result = pairSum(nums, targetSum);
-    for(int n : result){
-        cout << n << " ";
-    }
+    cout << result[0] << ", " << result[1] << '\n';
     return 0;
 }
