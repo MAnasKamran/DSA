@@ -3,7 +3,7 @@
 #include <algorithm>
 
 using namespace std;
-
+//Optimal approach using two pointers
 int maxArea(vector<int> heights){
     int n = heights.size();
     int maxWater = 0;
