@@ -5,16 +5,23 @@
 using namespace std;
 
 int maxArea(vector<int> heights){
-    int maxWater = 0;
     int n = heights.size();
+    int maxWater = 0;
     int area = 0;
+    int start = 0;
+    int end = n - 1;
 
-    for(int i = 0; i < n; i++){
-        for(int j = i + 1; j < n; j++){
-            int width = j - i;
-            int h = min(heights[i], heights[j]);
-            area = h * width;
-            maxWater = max(maxWater, area);
+    while(start < end){
+        int width = end - start;
+        int ht = min(heights[start], heights[end]);
+        area = width * ht;
+        maxWater = max(maxWater, area);
+
+        if(heights[start] < heights[end]){
+            start++;
+        }
+        else{
+            end--;
         }
     }
     return maxWater;
