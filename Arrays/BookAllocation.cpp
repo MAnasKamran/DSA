@@ -27,8 +27,12 @@ int allocateBooks(vector<int> &arr, int n, int m){
     for(int i = 0; i < n; i++){
         sum += arr[i];
     }
-    int st = 0, end = sum, ans = -1;
+    int max_element = 0, end = sum, ans = -1;
 
+    for(int i = 0; i < n; i++){
+        max_element = max(max_element, arr[i]);
+    }
+    int st = max_element;
     while(st <= end){
         int mid = st + (end - st) / 2;
 
